@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ask HMRC – Digital assistant</title>
+
+  <!-- Add viewport-fit for iOS safe areas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <style>
+    :root{
+      --govuk-blue:#1d70b8; --govuk-bg:#ffffff; --govuk-black:#0b0c0c; --govuk-link:#1d70b8;
+      --container-max: 46rem; /* ~736px: comfortable reading width */
+    }
+
+    /* Prevent iOS text auto-resize surprises */
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background:var(--govuk-bg);
+      color:var(--govuk-black);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      line-height:1.5;
+    }
+
+    /* Make any images responsive by default */
+    img{ max-width:100%; height:auto; }
+
+    .govuk-header{
+      background:var(--govuk-blue);
+      color:#fff;
+      padding:10px 16px;
+      display:flex; align-items:center; gap:12px;
+    }
+    .govuk-header__logo{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none; color:#fff;
+    }
+    .govuk-header__logo img{ height:32px; display:block; }
+    .govuk-header__org{ font-weight:600; letter-spacing:.2px; }
+
+    /* Let content fill the phone width, but cap on desktop */
+    main{
+      max-width:var(--container-max);
+      margin:24px auto 96px;
+      padding:0 16px;
+    }
+
+    .govuk-breadcrumbs{ font-size:0.9rem; margin-bottom:12px; }
+    .govuk-breadcrumbs a{ color:var(--govuk-link); text-decoration:none; }
+    .govuk-breadcrumbs a:hover{ text-decoration:underline; }
+
+    h1{ margin:0 0 12px; font-size:clamp(1.5rem, 3.5vw, 2rem); }
+    .lede{ color:#505a5f; margin-bottom:20px; }
+
+    .panel{
+      background:var(--govuk-blue);
+      border-radius:8px;
+      padding:16px;
+      color:#fff;
+      border:none;
+    }
+    .panel strong, .panel p, .panel li, .panel ul, .panel .hint { color:#fff; }
+    .panel ul { margin-top:0; padding-left:1.2rem; }
+    .hint{ font-size:0.9rem; opacity:.95; }
+
+    /* Small-screen polish */
+    @supports (padding: max(0px)) {
+      /* respect iPhone safe areas when present */
+      body { padding-left: max(0px, env(safe-area-inset-left)); padding-right: max(0px, env(safe-area-inset-right)); }
+      .govuk-header { padding-left: max(16px, env(safe-area-inset-left) + 12px); padding-right: max(16px, env(safe-area-inset-right) + 12px); }
+    }
+
+    @media (max-width: 420px){
+      .govuk-header__org{ font-size:0.95rem; }
+      .govuk-breadcrumbs{ font-size:0.85rem; }
+      .panel{ padding:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="govuk-header" role="banner">
+    <a class="govuk-header__logo" href="#" aria-label="GOV.UK home">
+      <img src="98bb7b79-9edf-4a72-8f0b-d05c974237e5.png" alt="GOV.UK logo" />
+      <span class="govuk-header__org">HM Revenue &amp; Customs</span>
+    </a>
+  </header>
+
+  <main id="content" role="main">
+    <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+      <a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Contact HMRC</a> &nbsp;/&nbsp; Ask HMRC
+    </nav>
+
+    <h1>Ask HMRC – Digital assistant</h1>
+    <p class="lede">Start a conversation with our digital assistant for help with HMRC services.</p>
+
+    <div class="panel" aria-labelledby="before-you-start">
+      <p id="before-you-start"><strong>Before you start</strong></p>
+      <ul>
+        <li>Have relevant details ready, such as your Government Gateway user ID if you have one.</li>
+        <li>Do not share passwords or full card numbers in chat.</li>
+      </ul>
+      <p class="hint">If you need urgent help or cannot use chat, use the contact options on GOV.UK.</p>
+    </div>
+  </main>
+
+  <!-- CXone loader -->
+  <script>
+    (function(n,u){
+      window.CXoneDfo=n;
+      window[n]=window[n]||function(){(window[n].q=window[n].q||[]).push(arguments)};
+      window[n].u=u;
+      var e=document.createElement("script");
+      e.type="module";
+      e.src=u+"?"+Math.round(Date.now()/1e3/3600);
+      document.head.appendChild(e);
+    })('cxone','https://web-modules-de-na1.niceincontact.com/loader/1/loader.js');
+
+    cxone('init', '1092');
+    cxone('guide', 'init', 'dbdf477b-a3d9-4694-b8b8-68f1bebd9bc3');
+    cxone('guide','hidePreSurvey');
+  </script>
+</body>
+</html>
